@@ -1,0 +1,10 @@
+   Compiling nickel-lang v2.2.0 (/tmp/nickel-embedding-prototypes/nickel)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.24s
+     Running `/tmp/nickel-embedding-target/debug/examples/embedding_prototype`
+{
+  "calculation": {
+    "charge": 2,
+    "iterations": 50
+  },
+  "name": "H₂"
+}

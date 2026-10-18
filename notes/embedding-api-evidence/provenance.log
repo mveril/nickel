@@ -1,0 +1,10 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running unittests src/lib.rs (/tmp/nickel-embedding-target/debug/deps/nickel_lang-4e06931483c7b3be)
+
+running 1 test
+evaluated explicit: Original(RawSpan { src_id: FileId(2), start: ByteIndex(11), end: ByteIndex(12) })
+evaluated defaulted: Original(RawSpan { src_id: FileId(3), start: ByteIndex(45), end: ByteIndex(46) })
+evaluated computed: Inherited(RawSpan { src_id: FileId(3), start: ByteIndex(59), end: ByteIndex(77) })
+test experimental::tests::evaluated_positions_are_not_a_reliable_original_input_map ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 34 filtered out; finished in 0.07s

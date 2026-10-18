@@ -78,6 +78,9 @@ pub enum ErrorFormat {
 #[cfg(feature = "capi")]
 pub mod capi;
 
+#[cfg(feature = "experimental-embedding")]
+pub mod experimental;
+
 /// The main entry point.
 ///
 /// The context holds state that needs to be persisted across evaluations.
@@ -89,6 +92,10 @@ pub mod capi;
 /// the original sources and their parsed AST, the position table, and other data that you might
 /// want to discard between unrelated evaluations.
 pub struct Context {
+    #[cfg(feature = "experimental-embedding")]
+    source_scope: std::sync::Arc<()>,
+    #[cfg(feature = "experimental-embedding")]
+    registered_sources: Vec<nickel_lang_core::files::FileId>,
     name: Option<String>,
     vm_ctxt: VmContext<CacheHub, CacheImpl>,
 }
@@ -108,6 +115,8 @@ pub enum Color {
 /// A Nickel evaluation error.
 #[derive(Clone)]
 pub struct Error {
+    #[cfg(feature = "experimental-embedding")]
+    source_scope: std::sync::Arc<()>,
     error: Box<nickel_lang_core::error::Error>,
     files: nickel_lang_core::files::Files,
 }
@@ -156,6 +165,8 @@ impl From<std::io::Error> for Error {
         Error {
             error: Box::new(nickel_lang_core::error::Error::IOError(e.into())),
             files: Files::empty(),
+            #[cfg(feature = "experimental-embedding")]
+            source_scope: std::sync::Arc::new(()),
         }
     }
 }
@@ -165,6 +176,8 @@ impl From<nickel_lang_core::error::ExportErrorData> for Error {
         Error {
             error: Box::new(e.into()),
             files: Files::empty(),
+            #[cfg(feature = "experimental-embedding")]
+            source_scope: std::sync::Arc::new(()),
         }
     }
 }
@@ -173,6 +186,10 @@ impl Context {
     pub fn new() -> Self {
         Self {
             name: Default::default(),
+            #[cfg(feature = "experimental-embedding")]
+            source_scope: std::sync::Arc::new(()),
+            #[cfg(feature = "experimental-embedding")]
+            registered_sources: Vec::new(),
             vm_ctxt: VmContext::new(CacheHub::new(), std::io::sink(), NullReporter {}),
         }
     }
@@ -336,6 +353,8 @@ impl Context {
         Error {
             error: Box::new(error),
             files: self.vm_ctxt.import_resolver.sources.files().clone(),
+            #[cfg(feature = "experimental-embedding")]
+            source_scope: self.source_scope.clone(),
         }
     }
 

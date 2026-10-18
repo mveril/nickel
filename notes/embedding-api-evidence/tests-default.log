@@ -1,0 +1,20 @@
+   Compiling nickel-lang v2.2.0 (/tmp/nickel-embedding-prototypes/nickel)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.91s
+     Running unittests src/lib.rs (/tmp/nickel-embedding-target/debug/deps/nickel_lang-357459a6bc6a8ec2)
+
+running 4 tests
+test tests::error_format ... ok
+test tests::lazy_inspection ... ok
+test tests::basic_inspection ... ok
+test tests::pending_contracts ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+   Doc-tests nickel_lang
+
+running 1 test
+test nickel/src/lib.rs - Expr::to_serde (line 564) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+all doctests ran in 0.88s; merged doctests compilation took 0.78s

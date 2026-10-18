@@ -326,7 +326,7 @@ impl ParseError {
     }
 
     pub fn from_toml(error: toml_edit::TomlError, file_id: FileId) -> Self {
-        use codespan::{ByteIndex, ByteOffset};
+        use codespan::ByteIndex;
 
         let span = error.span();
         ParseError::ExternalFormatError(
@@ -335,7 +335,8 @@ impl ParseError {
             span.map(|span| RawSpan {
                 src_id: file_id,
                 start: ByteIndex::from(span.start as u32),
-                end: ByteIndex(span.end as u32) + ByteOffset::from(1),
+                // toml_edit already returns a half-open byte range, including at EOF.
+                end: ByteIndex(span.end as u32),
             }),
         )
     }
@@ -423,5 +424,32 @@ impl From<ParseError> for ParseErrors {
 impl From<Vec<ParseError>> for ParseErrors {
     fn from(errors: Vec<ParseError>) -> ParseErrors {
         ParseErrors { errors }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn toml_error_preserves_half_open_utf8_and_eof_ranges() {
+        for source in [
+            "value = [",
+            "value = 'é'\nother = ",
+            "value = @",
+            "value = 'λ'\n💥",
+        ] {
+            let error = source.parse::<toml_edit::Document<_>>().unwrap_err();
+            let expected = error.span().unwrap();
+            let mut files = crate::files::Files::empty();
+            let id = files.add("bad.toml", source);
+            let ParseError::ExternalFormatError(_, _, Some(span)) =
+                ParseError::from_toml(error, id)
+            else {
+                panic!("expected a located TOML error");
+            };
+            assert_eq!(span.start.to_usize()..span.end.to_usize(), expected);
+            assert!(source.get(expected).is_some());
+        }
     }
 }

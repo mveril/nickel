@@ -1,0 +1,58 @@
+   Compiling libc v0.2.186
+   Compiling same-file v1.0.6
+   Compiling crossbeam-utils v0.8.21
+   Compiling yansi v1.0.1
+   Compiling num-traits v0.2.19
+   Compiling rayon-core v1.13.0
+   Compiling proc-macro2 v0.4.30
+   Compiling half v2.6.0
+   Compiling plotters-backend v0.3.7
+   Compiling ciborium-io v0.2.2
+   Compiling clap_lex v0.7.5
+   Compiling anstyle v1.0.13
+   Compiling walkdir v2.5.0
+   Compiling unicode-xid v0.1.0
+   Compiling clap_builder v4.5.47
+   Compiling plotters-svg v0.3.7
+   Compiling ciborium-ll v0.2.2
+   Compiling itertools v0.10.5
+   Compiling syn v0.15.44
+   Compiling proc-macro2-diagnostics v0.10.1
+   Compiling cast v0.3.0
+   Compiling ciborium v0.2.2
+   Compiling tinytemplate v1.2.1
+   Compiling oorandom v11.1.5
+   Compiling anes v0.1.6
+   Compiling diff v0.1.13
+   Compiling ouroboros_macro v0.18.5
+   Compiling glob v0.3.3
+   Compiling similar v2.7.0
+   Compiling pretty_assertions v1.4.1
+   Compiling quote v0.6.13
+   Compiling crossbeam-epoch v0.9.18
+   Compiling assert_matches v1.5.0
+   Compiling plotters v0.3.7
+   Compiling parking_lot_core v0.9.11
+   Compiling is-terminal v0.4.16
+   Compiling console v0.15.11
+   Compiling crossbeam-deque v0.8.6
+   Compiling parking_lot v0.12.4
+   Compiling criterion-plot v0.5.0
+   Compiling string_cache v0.9.0
+   Compiling insta v1.43.2
+   Compiling lalrpop v0.23.1
+   Compiling ouroboros v0.18.5
+   Compiling rayon v1.11.0
+   Compiling clap v4.5.47
+   Compiling test-generator v0.3.1
+   Compiling criterion v0.5.1
+   Compiling nickel-lang-parser v0.4.0 (/tmp/nickel-embedding-prototypes/parser)
+   Compiling nickel-lang-core v0.19.0 (/tmp/nickel-embedding-prototypes/core)
+   Compiling nickel-lang-utils v0.1.0 (/tmp/nickel-embedding-prototypes/utils)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 12s
+     Running unittests src/lib.rs (/tmp/nickel-embedding-target/debug/deps/nickel_lang_parser-8606e94ff063848d)
+
+running 1 test
+test error::tests::toml_error_preserves_half_open_utf8_and_eof_ranges ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 62 filtered out; finished in 0.00s

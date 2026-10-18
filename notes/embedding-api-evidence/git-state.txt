@@ -1,0 +1,30 @@
+/home/mveril/git/nickel
+$ git branch --show-current
+master
+$ git rev-parse HEAD
+9fe00ea6107d0218d55ffd3d05a0c225b6bdb5cd
+$ git status --short
+
+/home/mveril/git/RustiQ
+$ git branch --show-current
+main
+$ git rev-parse HEAD
+5b5f376b4671a6237970b013e364fc48618284c1
+$ git status --short
+
+/tmp/nickel-embedding-prototypes
+$ git branch --show-current
+experiment/embedding-api-prototypes
+$ git rev-parse HEAD
+9fe00ea6107d0218d55ffd3d05a0c225b6bdb5cd
+$ git status --short
+ M nickel/Cargo.toml
+ M nickel/src/lib.rs
+ M parser/src/error.rs
+?? nickel/examples/
+?? nickel/src/experimental.rs
+?? nickel/src/experimental/
+?? notes/embedding-api-evidence/
+?? notes/embedding-api-experiment.md
+
+No commits, pushes, issues or pull requests created.

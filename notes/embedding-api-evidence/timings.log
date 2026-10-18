@@ -1,0 +1,43 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running unittests src/lib.rs (/tmp/nickel-embedding-target/debug/deps/nickel_lang-4e06931483c7b3be)
+
+running 1 test
+test experimental::tests::embedding_timings ... timing profile=debug iterations=100 input_bytes=2980 fields=200
+sample=0 operation=experimental_register_parse_provenance total_us=134414
+sample=0 operation=core_register_parse_no_provenance total_us=114669
+sample=0 operation=experimental_repeated_wrapper_deep_export total_us=214570
+sample=0 operation=core_repeated_wrapper_deep_export total_us=220513
+sample=0 operation=experimental_repeated_shallow total_us=3365
+sample=0 operation=experimental_repeated_deep_export total_us=129575
+sample=0 operation=owned_diagnostic_snapshot total_us=2303
+sample=1 operation=experimental_register_parse_provenance total_us=125790
+sample=1 operation=core_register_parse_no_provenance total_us=111566
+sample=1 operation=experimental_repeated_wrapper_deep_export total_us=213942
+sample=1 operation=core_repeated_wrapper_deep_export total_us=218687
+sample=1 operation=experimental_repeated_shallow total_us=3580
+sample=1 operation=experimental_repeated_deep_export total_us=129631
+sample=1 operation=owned_diagnostic_snapshot total_us=2481
+sample=2 operation=experimental_register_parse_provenance total_us=127690
+sample=2 operation=core_register_parse_no_provenance total_us=109321
+sample=2 operation=experimental_repeated_wrapper_deep_export total_us=214422
+sample=2 operation=core_repeated_wrapper_deep_export total_us=216365
+sample=2 operation=experimental_repeated_shallow total_us=3533
+sample=2 operation=experimental_repeated_deep_export total_us=131179
+sample=2 operation=owned_diagnostic_snapshot total_us=2229
+sample=3 operation=experimental_register_parse_provenance total_us=125866
+sample=3 operation=core_register_parse_no_provenance total_us=110158
+sample=3 operation=experimental_repeated_wrapper_deep_export total_us=212033
+sample=3 operation=core_repeated_wrapper_deep_export total_us=221827
+sample=3 operation=experimental_repeated_shallow total_us=3633
+sample=3 operation=experimental_repeated_deep_export total_us=134718
+sample=3 operation=owned_diagnostic_snapshot total_us=3105
+sample=4 operation=experimental_register_parse_provenance total_us=128979
+sample=4 operation=core_register_parse_no_provenance total_us=110255
+sample=4 operation=experimental_repeated_wrapper_deep_export total_us=212104
+sample=4 operation=core_repeated_wrapper_deep_export total_us=213942
+sample=4 operation=experimental_repeated_shallow total_us=3592
+sample=4 operation=experimental_repeated_deep_export total_us=134064
+sample=4 operation=owned_diagnostic_snapshot total_us=2206
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 34 filtered out; finished in 4.81s

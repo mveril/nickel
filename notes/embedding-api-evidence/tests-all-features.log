@@ -1,0 +1,51 @@
+   Compiling nickel-lang v2.2.0 (/tmp/nickel-embedding-prototypes/nickel)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.31s
+     Running unittests src/lib.rs (/tmp/nickel-embedding-target/debug/deps/nickel_lang-d99b9e0459ba7649)
+
+running 35 tests
+test experimental::tests::embedding_timings ... ignored, reproducible timing probe; run alone with --ignored --nocapture --test-threads=1
+test experimental::tests::imported_contract_reports_have_multiple_sources_and_labels ... ok
+test experimental::tests::evaluated_positions_are_not_a_reliable_original_input_map ... ok
+test experimental::tests::native_registration_populates_ast_and_reuses_it_for_preparation ... ok
+test experimental::tests::import_search_paths_work_with_registered_sources ... ok
+test experimental::tests::explicit_format_is_preserved_even_when_name_extension_disagrees ... ok
+test experimental::tests::duplicates_invalid_and_cross_context_handles ... ok
+test experimental::tests::collect_independent_errors_using_named_lookup_after_shallow_evaluation ... ok
+test experimental::tests::json_and_direct_serde_fractional_nested_optional_and_enums ... ok
+test experimental::tests::batch_and_native_nickel_composition ... ok
+test experimental::tests::non_finite_toml_importer_panics_are_separate_from_embedding_design ... ok
+test experimental::tests::collect_nested_and_array_errors_without_skipping_deferred_contracts ... ok
+test experimental::tests::memory_registration_shadows_disk_but_does_not_replace_an_existing_import ... ok
+test experimental::tests::rustiq_readonly_real_schema_and_fixtures_parity ... ignored, requires an external read-only RustiQ checkout via RUSTIQ_CHECKOUT
+test experimental::tests::failed_registration_can_be_corrected_without_changing_old_diagnostics ... ok
+test experimental::tests::nested_json_deserialization_contract_regression ... ok
+test experimental::tests::nested_imported_container_contract_assertion_reproducer ... ok
+test experimental::tests::record_iteration_bypasses_pending_contracts_regression_reproducer ... ok
+test experimental::tests::parsed_provenance_does_not_guess_imported_or_computed_locations ... ok
+test experimental::tests::toml_eof_ranges_are_valid_and_not_extended_past_source ... ok
+test experimental::tests::reports_own_shared_sources_after_context_and_error_destruction ... ok
+test experimental::tests::numeric_boundary_observations ... ok
+test experimental::tests::repeated_evaluation_reuses_parsed_input ... ok
+test experimental::tests::relative_filesystem_imports_and_registered_memory_imports ... ok
+test experimental::tests::provenance_nested_inline_arrays_utf8_crlf_and_duplicate_names ... ok
+test experimental::tests::shallow_and_export_modes_preserve_contract_evaluation_policy ... ok
+test experimental::tests::toml_composition_defaults_nested_single_and_exports ... ok
+test experimental::tests::synthetic_sources_are_captured_from_the_converted_snapshot ... ok
+test experimental::tests::syntax_and_contract_errors_preserve_input_identity ... ok
+test experimental::tests::wrappers_are_retained_but_reports_do_not_mutate_context_sources ... ok
+test tests::error_format ... ok
+test tests::basic_inspection ... ok
+test tests::lazy_inspection ... ok
+test tests::pending_contracts ... ok
+test experimental::tests::reports_cover_syntax_contract_utf8_eof_and_formatter_compatibility ... ok
+
+test result: ok. 33 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.73s
+
+   Doc-tests nickel_lang
+
+running 1 test
+test nickel/src/lib.rs - Expr::to_serde (line 564) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+all doctests ran in 0.86s; merged doctests compilation took 0.77s

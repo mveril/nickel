@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running unittests src/lib.rs (/tmp/nickel-embedding-target/debug/deps/nickel_lang-4e06931483c7b3be)
+
+running 1 test
+number=-0.5 json=-0.5 json_i64=Err(Error("invalid type: floating point `-0.5`, expected i64", line: 1, column: 4)) direct_i64=Ok(Ok(0))
+number=0.5 json=0.5 json_i64=Err(Error("invalid type: floating point `0.5`, expected i64", line: 1, column: 3)) direct_i64=Ok(Ok(0))
+number=1.5 json=1.5 json_i64=Err(Error("invalid type: floating point `1.5`, expected i64", line: 1, column: 3)) direct_i64=Ok(Ok(2))
+number=-1.5 json=-1.5 json_i64=Err(Error("invalid type: floating point `-1.5`, expected i64", line: 1, column: 4)) direct_i64=Ok(Ok(-2))
+number=9007199254740993 json=9007199254740993 json_i64=Ok(9007199254740993) direct_i64=Ok(Ok(9007199254740993))
+number=9223372036854775807 json=9223372036854775807 json_i64=Ok(9223372036854775807) direct_i64=Ok(Ok(9223372036854775807))
+number=9223372036854775808 json=9223372036854775808 json_i64=Err(Error("invalid value: integer `9223372036854775808`, expected i64", line: 1, column: 19)) direct_i64=Ok(Ok(9223372036854775807))
+number=-9223372036854775809 json=-9.223372036854776e18 json_i64=Err(Error("invalid type: floating point `-9.223372036854776e18`, expected i64", line: 1, column: 21)) direct_i64=Ok(Ok(-9223372036854775808))
+number=18446744073709551615 json=18446744073709551615 json_i64=Err(Error("invalid value: integer `18446744073709551615`, expected i64", line: 1, column: 20)) direct_i64=Ok(Ok(9223372036854775807))
+number=18446744073709551616 json=1.8446744073709552e19 json_i64=Err(Error("invalid type: floating point `1.8446744073709552e19`, expected i64", line: 1, column: 21)) direct_i64=Ok(Ok(9223372036854775807))
+number=170141183460469231731687303715884105727 json=1.7014118346046923e38 json_i64=Err(Error("invalid type: floating point `1.7014118346046923e38`, expected i64", line: 1, column: 21)) direct_i64=Ok(Ok(9223372036854775807))
+test experimental::tests::numeric_boundary_observations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 34 filtered out; finished in 0.07s
